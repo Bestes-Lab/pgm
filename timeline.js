@@ -31,7 +31,7 @@ function setupTimeline() {
 
     const v = getModelsCacheKey();
     const baseUrl = getModelsBaseUrl();
-    const url = `${baseUrl}/models.json` ; //fucking Vtag
+    const url = `${baseUrl}/pgm/models.json` ; //fucking Vtag////
 
     window.__PGM_MODELS_DATA_PROMISE__ = fetch(url, { cache: 'no-store' })
       .then((r) => {
@@ -130,4 +130,5 @@ function setupTimeline() {
 
   renderTimelineFromModels();
 }
+
 
