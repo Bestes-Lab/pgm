@@ -30,7 +30,7 @@ function setupTimeline() {
     if (window.__PGM_MODELS_DATA_PROMISE__) return window.__PGM_MODELS_DATA_PROMISE__;
 
     const baseUrl = getModelsBaseUrl();
-    const url = `${baseUrl}/models.json`;
+    const url = `${baseUrl}/pgm/models.json`;
 
     window.__PGM_MODELS_DATA_PROMISE__ = fetch(url, { cache: 'no-store' })
       .then((r) => {
@@ -129,3 +129,4 @@ function setupTimeline() {
 
   renderTimelineFromModels();
 }
+
