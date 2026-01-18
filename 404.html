@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Pygmalion — Not Found</title>
+  <meta name="description" content="Page not found." />
+  <link rel="icon" href="https://i.postimg.cc/qBmGPXs4/pgm.png" />
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    :root {
+      --brand: #a5c9ff;
+      --bg: #f0f7ff;
+      --surface: rgba(239, 246, 255, 0.7);
+      --text: #1e3a8a;
+      --muted: #3b82f6;
+      --border: rgba(59, 130, 246, 0.2);
+      --radius: 16px;
+      --focus: rgba(96, 165, 250, 0.6);
+    }
+
+    html[data-theme='dark'] {
+      --brand: #3b82f6;
+      --bg: #1e293b;
+      --surface: rgba(51, 65, 85, 0.5);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.2);
+      --focus: rgba(59, 130, 246, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 480px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bg-404 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(200px, 30vw, 400px);
+      font-weight: 900;
+      color: var(--border);
+      opacity: 0.3;
+      z-index: -1;
+      pointer-events: none;
+      text-shadow: -1px -1px 0 var(--surface), 1px -1px 0 var(--surface), -1px 1px 0 var(--surface), 1px 1px 0 var(--surface), 4px 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 48px);
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 10px 0 24px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: all 180ms ease;
+    }
+
+    .btn-primary {
+      background: color-mix(in srgb, var(--brand) 25%, var(--surface));
+      border-color: color-mix(in srgb, var(--brand) 60%, var(--border));
+      color: var(--text);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border-color: color-mix(in srgb, var(--brand) 80%, var(--border));
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .badges-track {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .badge-slide {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge-img {
+      height: 90px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 16px;
+      }
+
+      .container {
+        max-width: 92vw;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        margin: 10px 0 18px;
+      }
+
+      .actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn {
+        width: min(320px, 92vw);
+      }
+
+      .badges {
+        width: min(480px, 92vw);
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        justify-content: center;
+        padding: 0;
+      }
+
+      .badges-track {
+        justify-content: flex-start;
+        will-change: transform;
+      }
+
+      .badge-slide {
+        flex: 0 0 auto;
+      }
+
+      .badge-img {
+        height: 56px;
+        flex: 0 0 auto;
+      }
+    }
+
+    @keyframes badges-marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(-1 * var(--marquee-distance, 0px)));
+      }
+    }
+
+    html[data-device='mobile'] .badges-track[data-marquee='on'] {
+      animation: badges-marquee var(--marquee-duration, 12s) linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html[data-device='mobile'] .badges-track[data-marquee='on'] {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-404" aria-hidden="true">404</div>
+  <main class="container">
+    <h1 class="title">Page Not Found</h1>
+    <p class="subtitle">The page you are looking for does not exist or has been moved.</p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Back to Main</a>
+      <button id="backBtn" type="button" class="btn btn-primary">Go Back</button>
+    </div>
+  </main>
+
+  <div id="badges" class="badges" aria-label="Compliance badges">
+    <div id="badgesTrack" class="badges-track">
+      <div class="badge-slide">
+        <img class="badge-img" src="https://i.postimg.cc/XNLhRSJr/DMCACompliant.png" alt="DMCA Compliant">
+      </div>
+      <div class="badge-slide">
+        <img class="badge-img" src="https://i.postimg.cc/hPGwgyz4/Poweredby_pgm_Engine.png" alt="Powered by PGM Engine">
+      </div>
+      <div class="badge-slide">
+        <img class="badge-img" src="https://i.postimg.cc/65QSwj2Q/siteprotectedby_pygmalionai.png" alt="Site protected by Pygmalion AI">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      if (!window.matchMedia) return;
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      const apply = () => {
+        document.documentElement.dataset.theme = mq.matches ? 'dark' : 'light';
+      };
+
+      const isMobile = () => {
+        const ua = (navigator.userAgent || '').toLowerCase();
+        const uaMobile = /android|iphone|ipad|ipod|windows phone|mobile/.test(ua);
+        const coarse = window.matchMedia('(pointer: coarse)').matches;
+        const narrow = window.matchMedia('(max-width: 520px)').matches;
+        return uaMobile || (coarse && narrow);
+      };
+
+      const applyDevice = () => {
+        document.documentElement.dataset.device = isMobile() ? 'mobile' : 'desktop';
+      };
+
+      const badges = document.getElementById('badges');
+      const badgesTrack = document.getElementById('badgesTrack');
+
+      const ensureMarqueeClones = () => {
+        if (!badgesTrack) return;
+        if (badgesTrack.dataset.cloned === '1') return;
+        const slides = Array.from(badgesTrack.children);
+        slides.forEach((node) => {
+          badgesTrack.appendChild(node.cloneNode(true));
+        });
+        badgesTrack.dataset.cloned = '1';
+      };
+
+      const updateMarqueeMetrics = () => {
+        if (!badges || !badgesTrack) return;
+        const speedPxPerSec = 60;
+        const halfWidth = badgesTrack.scrollWidth / 2;
+        if (!halfWidth || !Number.isFinite(halfWidth)) return;
+        const durationSec = Math.max(6, halfWidth / speedPxPerSec);
+        badgesTrack.style.setProperty('--marquee-distance', `${halfWidth}px`);
+        badgesTrack.style.setProperty('--marquee-duration', `${durationSec}s`);
+      };
+
+      const enableMarquee = () => {
+        if (!badgesTrack) return;
+        ensureMarqueeClones();
+        updateMarqueeMetrics();
+        badgesTrack.dataset.marquee = 'on';
+      };
+
+      const disableMarquee = () => {
+        if (!badgesTrack) return;
+        badgesTrack.dataset.marquee = 'off';
+        badgesTrack.style.removeProperty('--marquee-distance');
+        badgesTrack.style.removeProperty('--marquee-duration');
+      };
+
+      const applyCarouselMode = () => {
+        const isNowMobile = document.documentElement.dataset.device === 'mobile';
+        if (!badgesTrack) return;
+        if (isNowMobile) {
+          enableMarquee();
+        } else {
+          disableMarquee();
+        }
+      };
+
+      let deviceTimer;
+      const scheduleApplyDevice = () => {
+        clearTimeout(deviceTimer);
+        deviceTimer = setTimeout(() => {
+          applyDevice();
+          applyCarouselMode();
+          updateMarqueeMetrics();
+        }, 120);
+      };
+
+      apply();
+      applyDevice();
+      applyCarouselMode();
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', apply);
+      } else if (typeof mq.addListener === 'function') {
+        mq.addListener(apply);
+      }
+
+      window.addEventListener('resize', scheduleApplyDevice, { passive: true });
+      window.addEventListener('orientationchange', scheduleApplyDevice, { passive: true });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          disableMarquee();
+        } else {
+          applyCarouselMode();
+          updateMarqueeMetrics();
+        }
+      });
+
+      const backBtn = document.getElementById('backBtn');
+      if (backBtn) {
+        const canGoBack = window.history.length > 1;
+        if (!canGoBack) {
+          backBtn.style.display = 'none';
+        }
+        backBtn.addEventListener('click', () => {
+          window.history.back();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

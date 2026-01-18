@@ -29,9 +29,8 @@ function setupTimeline() {
     if (typeof window === 'undefined') return Promise.reject(new Error('No window'));
     if (window.__PGM_MODELS_DATA_PROMISE__) return window.__PGM_MODELS_DATA_PROMISE__;
 
-    const v = getModelsCacheKey();
     const baseUrl = getModelsBaseUrl();
-    const url = `${baseUrl}/pgm/models.json` ; //fucking Vtag////
+    const url = `${baseUrl}/models.json`;
 
     window.__PGM_MODELS_DATA_PROMISE__ = fetch(url, { cache: 'no-store' })
       .then((r) => {
@@ -130,5 +129,3 @@ function setupTimeline() {
 
   renderTimelineFromModels();
 }
-
-

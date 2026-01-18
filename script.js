@@ -1,6 +1,7 @@
 (() => {
   const SELECTORS = {
     header: '.site-header',
+    nav: '.nav',
     navToggle: '.nav-toggle',
     navList: '#nav-list',
     navLinks: '.nav-link',
