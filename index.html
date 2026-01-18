@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="pgm-base-url" content="" />
+  <title>Pygmalion — Explore, Sculpt Knowledge</title>
+  <meta name="description" content="Pygmalion AI is a friendly knowledge exploration system that blends conversation, learning, and insight refinement." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="https://via.placeholder.com/40" />
+</head>
+<body>
+  <a class="skip-link" href="#intro">Skip to content</a>
+
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24">
+      <path d="M5 17.5L5 6.4C5 5.07 6.07 4 7.4 4H16.6C17.93 4 19 5.07 19 6.4V12.6C19 13.93 17.93 15 16.6 15H9.2L5 18.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-sculpt" viewBox="0 0 24 24">
+      <path d="M6 18L10.5 13.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      <path d="M13.5 10.5L18 6C19.1 4.9 20.9 4.9 22 6C23.1 7.1 23.1 8.9 22 10L17.5 14.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M6 18L5 21L8 20L17.5 10.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-version" viewBox="0 0 24 24">
+      <rect x="5" y="5" width="14" height="4.5" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <rect x="5" y="10.5" width="14" height="4.5" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <rect x="5" y="16" width="9" height="4" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6" />
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path d="M12 2.5C7.31 2.5 3.5 6.31 3.5 11C3.5 14.98 6.06 18.33 9.68 19.45C9.74 19.46 9.81 19.43 9.86 19.39C9.91 19.34 9.94 19.27 9.93 19.2L9.66 17.42C9.62 17.14 9.44 16.89 9.2 16.75C7.52 15.79 6.88 14.03 6.88 14.03C6.62 13.33 6.21 12.95 6.21 12.95C5.6 12.47 6.26 12.48 6.26 12.48C6.94 12.53 7.3 13.18 7.3 13.18C7.9 14.25 8.92 13.94 9.3 13.77C9.36 13.14 9.63 12.68 9.93 12.42C8 12.2 6.01 11.44 6.01 8.44C6.01 7.62 6.3 6.93 6.8 6.37C6.72 6.2 6.47 5.45 6.88 4.41C6.88 4.41 7.52 4.2 9.09 5.28C9.69 5.11 10.33 5.02 10.97 5.02C11.6 5.02 12.25 5.11 12.84 5.28C14.41 4.2 15.05 4.41 15.05 4.41C15.46 5.45 15.21 6.2 15.13 6.37C15.63 6.93 15.92 7.62 15.92 8.44C15.92 11.45 13.92 12.2 11.98 12.42C12.36 12.75 12.69 13.42 12.69 14.44L12.69 16.56C12.69 16.89 12.86 17.18 13.13 17.34L14.18 17.96C14.51 18.16 14.9 17.89 14.85 17.52L14.57 15.54C14.54 15.34 14.64 15.15 14.81 15.05C18.07 13.09 20.5 11.87 20.5 11C20.5 6.31 16.69 2.5 12 2.5Z" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3.5" y="5" width="17" height="14" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8" />
+      <polyline points="5 7.5 12 12.5 19 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24">
+      <path d="M12 3L13.6 9.2H20L14.8 12.9L16.4 19.2L12 15.2L7.6 19.2L9.2 12.9L4 9.2H10.4L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M5 12H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <polyline points="14 7 19 12 14 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  </svg>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#intro" aria-label="Pygmalion AI home">
+        <img src="https://i.postimg.cc/qBmGPXs4/pgm.png" alt="Pygmalion AI Logo" width="20" height="20" />
+      
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-list">
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+        </button>
+
+        <ul id="nav-list" class="nav-list">
+          <li><a class="nav-link" href="#intro" data-section="intro">Intro</a></li>
+          <li><a class="nav-link" href="#overview" data-section="overview">Overview</a></li>
+          <li><a class="nav-link" href="#timeline" data-section="timeline">Timeline</a></li>
+          <li><a class="nav-link" href="#features" data-section="features">Features</a></li>
+          <li><a class="nav-link" href="#benchmark" data-section="benchmark">Benchmark</a></li>
+          <li><a class="nav-link" href="#contact" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section id="intro" class="section hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="glow g1"></div>
+        <div class="glow g2"></div>
+        <div class="glow g3"></div>
+        <div class="hero-spotlight"></div>
+      </div>
+
+      <div class="container hero-inner" data-animate>
+        <p class="eyebrow"></p>
+        <h1 id="hero-title" class="hero-title">Pygmalion AI</h1>
+        <p class="hero-slogan">Explore — Sculpt knowledge</p>
+       
+       
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#overview" data-scroll-to="overview">
+            <span>Start Exploring</span>
+            <svg class="icon icon-sm" aria-hidden="true" focusable="false">
+              <use href="#icon-arrow"></use>
+            </svg>
+          </a>
+          <a class="btn btn-ghost" href="#features" data-scroll-to="features">
+            <span>See Features</span>
+            <svg class="icon icon-sm" aria-hidden="true" focusable="false">
+              <use href="#icon-arrow"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-meta" aria-label="Product highlights">
+          <div class="meta-chip" role="note">
+            <svg class="icon icon-xs" aria-hidden="true" focusable="false">
+              <use href="#icon-chat"></use>
+            </svg>
+            <span>Conversational discovery</span>
+          </div>
+          <div class="meta-chip" role="note">
+            <svg class="icon icon-xs" aria-hidden="true" focusable="false">
+              <use href="#icon-search"></use>
+            </svg>
+            <span>Search + insight shaping</span>
+          </div>
+          <div class="meta-chip" role="note">
+            <svg class="icon icon-xs" aria-hidden="true" focusable="false">
+              <use href="#icon-spark"></use>
+            </svg>
+            <span>Built for curious minds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section" aria-labelledby="overview-title">
+      <div class="container" data-animate>
+        <header class="section-header">
+          <h2 id="overview-title">Overview</h2>
+          <p class="section-subtitle">A friendly way to explore information and refine understanding.</p>
+        </header>
+
+        <div class="prose">
+          <p>
+            Pygmalion AI is a conversational AI focused on exploration and the sculpting of human knowledge. Instead of
+            only returning answers, it helps you travel through ideas—asking better questions, connecting topics, and
+            shaping insights in a way that feels natural.
+          </p>
+          <p>
+            It’s built to improve interaction and understanding between people and intelligent systems. Whether you’re
+            studying, planning, researching, or simply wondering, Pygmalion AI helps you move from “I’m not sure” to
+            “Now I see it.”
+          </p>
+          <p>
+            Pygmalion AI is for anyone curious about information, AI, or discovery. It aims to keep the experience
+            accessible: clear language, calm guidance, and a warm visual tone that supports focus.
+          </p>
+        </div>
+
+        <div class="stats" aria-label="Key product pillars">
+          <div class="stat-card">
+            <div class="stat-value">Conversation</div>
+            <div class="stat-label">Ask naturally and iterate with ease.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Exploration</div>
+            <div class="stat-label">Follow threads and see connections.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Refinement</div>
+            <div class="stat-label">Turn questions into sharp insights.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section" aria-labelledby="timeline-title">
+      <div class="container" data-animate>
+        <header class="section-header">
+          <h2 id="timeline-title">Version Timeline</h2>
+          <p class="section-subtitle">A simple view of how Pygmalion AI evolves over time.</p>
+        </header>
+
+        <ol class="timeline" role="list" aria-label="Pygmalion AI version timeline"></ol>
+      </div>
+    </section>
+
+    <section id="version-details" class="section version-details" aria-live="polite" hidden>
+      <div class="container" data-animate>
+        <header class="section-header version-details-header">
+          <h2 id="version-details-title" class="version-title"></h2>
+          <button id="close-version-details" class="btn btn-ghost" aria-label="Close version details">Close</button>
+        </header>
+        <div class="prose" id="version-details-content"></div>
+      </div>
+    </section>
+
+    <section id="features" class="section" aria-labelledby="features-title">
+      <div class="container" data-animate>
+        <header class="section-header">
+          <h2 id="features-title">Features</h2>
+          <p class="section-subtitle">Designed to make discovery feel easy, warm, and genuinely useful.</p>
+        </header>
+
+        <div class="feature-grid" role="list" aria-label="Feature list">
+          <article class="feature-card" role="listitem" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon icon-lg" focusable="false">
+                <use href="#icon-search"></use>
+              </svg>
+            </div>
+            <h3 class="feature-title">Smart search</h3>
+            <p class="feature-text">Combines conversational AI with information retrieval, so you can explore broadly and stay on track.</p>
+          </article>
+
+          <article class="feature-card" role="listitem" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon icon-lg" focusable="false">
+                <use href="#icon-chat"></use>
+              </svg>
+            </div>
+            <h3 class="feature-title">Conversational understanding</h3>
+            <p class="feature-text">Keeps context across exchanges for coherent replies and smoother follow-ups.</p>
+          </article>
+
+          <article class="feature-card" role="listitem" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon icon-lg" focusable="false">
+                <use href="#icon-sculpt"></use>
+              </svg>
+            </div>
+            <h3 class="feature-title">Knowledge sculpting</h3>
+            <p class="feature-text">Helps refine your questions and shape insights interactively—step by step, without pressure.</p>
+          </article>
+
+          <article class="feature-card" role="listitem" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon icon-lg" focusable="false">
+                <use href="#icon-version"></use>
+              </svg>
+            </div>
+            <h3 class="feature-title">Versioned improvements</h3>
+            <p class="feature-text">Each version enhances reasoning, inference, and usability while keeping the experience approachable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="benchmark" class="section" aria-labelledby="benchmark-title">
+      <div class="container" data-animate>
+        <header class="section-header">
+          <h2 id="benchmark-title">Benchmark</h2>
+          <p class="section-subtitle">Korean CSAT (2026) Performance</p>
+        </header>
+
+        <p class="bench-intro">
+          Pygmalion AI demonstrates strong understanding across subjects inspired by the 2026 Korean CSAT evaluation.
+        </p>
+
+        <div class="table-wrap" role="region" aria-label="Benchmark table" tabindex="0">
+          <table class="bench-table">
+            <thead>
+              <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Score</th>
+                <th scope="col" class="bench-bar-col">Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Korean Language</th>
+                <td class="bench-score">96</td>
+                <td class="bench-bar">
+                  <div class="progress" role="progressbar" aria-label="Korean Language score" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-fill" style="--p: 96%;"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Mathematics</th>
+                <td class="bench-score">92</td>
+                <td class="bench-bar">
+                  <div class="progress" role="progressbar" aria-label="Mathematics score" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-fill" style="--p: 92%;"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Korean History</th>
+                <td class="bench-score">100</td>
+                <td class="bench-bar">
+                  <div class="progress" role="progressbar" aria-label="Korean History score" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-fill" style="--p: 100%;"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">English</th>
+                <td class="bench-score">98</td>
+                <td class="bench-bar">
+                  <div class="progress" role="progressbar" aria-label="English score" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-fill" style="--p: 98%;"></span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="bench-note" role="note">기준: CSAT 2026</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container" data-animate>
+        <header class="section-header center">
+          <h2 id="contact-title">Contact</h2>
+          <p class="section-subtitle">Interested in collaborating, testing, or sharing ideas? Let’s talk.</p>
+        </header>
+
+        <div class="contact-card" role="region" aria-label="Contact information">
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">GitHub</div>
+              <span class="contact-link-wrap">
+                <a class="contact-link" href="https://github.com/lsthc" target="_blank" rel="noopener noreferrer">lsthc</a>
+               
+              </span>
+              <div class="contact-sub">
+                <span class="contact-sub-label">Organization</span>
+                <span class="contact-link-wrap">
+                  <a class="contact-link" href="https://github.com/Bestes-Lab" target="_blank" rel="noopener noreferrer">BestesLab</a>
+                  <span class="footnote-wrap">
+                    <button class="footnote-trigger" type="button" aria-label="Organization link note" aria-expanded="false">1</button>
+                    <div class="footnote-tooltip" role="tooltip" hidden>
+                      해당 프로젝트는 lsthc 및 BestesLab이 공동으로 개발한 프로젝트입니다.
+                    </div>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">
+              <svg class="icon icon-md" focusable="false">
+                <use href="#icon-mail"></use>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">Email</div>
+              <a class="contact-link" href="mailto:bestesofficial@gmail.com">bestesofficial@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-supporter" data-animate>
+      <div class="supporter-visual" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="109" xml:space="preserve" overflow="hidden">
+          <defs>
+            <clipPath id="clip0"><rect x="246" y="336" width="64" height="109" /></clipPath>
+            <clipPath id="clip1"><rect x="0" y="0" width="609600" height="1038225" /></clipPath>
+            <image width="64" height="109" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABtCAMAAAAmhZcEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAzUExURQAAAJ3E66fE4qjJ66XI66fH66bK6KTG6KXL66bM7afL7abK7aXK7afK7qbL7KfK7KbJ7BeQdzUAAAARdFJOUwANGiYzQE1aZnJ/jJmlsr/Mxg6KngAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAXBJREFUWEftmct2hCAQRAefiEb9/69NSApFbGuaZJNF3+VYfQ8wM7x8lTi/nMxTg4/VtNt+pcUDLQvqDlY8UOJQllHXiQZVGXV9MIEJIoJgxCMdwk95H/BMR/lnjFQZAoou1BjcB4ouVLWh9wdnf+rG4aD5ZwZXgMgbMsONNWimO2bY9w4pBjVsf25DQIjCDBsynAFpCUQ4JjBBxAQm+MLNCAtoNrKsfp8RItD6vUfqGV4/IfUMrd/S9sd1Y5DxZ30YCvo2LY8DXb3Ac2N5JxOksx4RCqm/HZIk2GBrGkC/LM0I0M3qihCDtgAZCt0EIEMxgQkiJjBBxARvBOJpvYBO6xNCDI+sSIcQhZ68Vas7MzjN8swN4r1JCe1F75dVZjnX3l/eQGSXMmb4IUyJsea6ODNkaO5PEqJBdX+SEA1VIyIZKq8q7/vBOoEw85jABJFKwe0FkuLYe+F2uKr6N0bKPtAFT2Sc8QouMn3PJ6/XJxNHssCuogG9AAAAAElFTkSuQmCC" preserveAspectRatio="none" id="img2" />
+            <clipPath id="clip3"><rect x="0" y="-0.25" width="609600" height="1038225" /></clipPath>
+          </defs>
+          <g clip-path="url(#clip0)" transform="translate(-246 -336)">
+            <g clip-path="url(#clip1)" transform="matrix(0.000104987 0 0 0.000104987 246 336)">
+              <g clip-path="url(#clip3)">
+                <use width="100%" height="100%" xlink:href="#img2" transform="matrix(9525 0 0 9525 0 -0.25)" />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="supporter-info">
+        <p class="supporter-tag">Supporter</p>
+        <p class="supporter-name">Bestes</p>
+        <p class="supporter-desc">Supporting AI modeling, training, and inference.</p>
+      </div>
+    </div>
+    <div class="container footer-inner">
+      <p class="footer-text">© <span id="year"></span> Pygmalion AI. All rights reserved.</p>
+      <a class="footer-top" href="#intro" data-scroll-to="intro" aria-label="Back to top">Back to top</a>
+    </div>
+  </footer>
+
+  <div id="replies-drawer" class="replies-drawer" role="dialog" aria-modal="true" aria-labelledby="replies-title" hidden>
+    <div class="replies-overlay" tabindex="-1" data-replies-close></div>
+    <aside class="replies-panel" role="document" aria-describedby="replies-body">
+      <header class="replies-header">
+        <h2 id="replies-title" class="replies-title">Replies</h2>
+        <button type="button" class="btn btn-ghost replies-close" data-replies-close aria-label="Close replies">Close</button>
+      </header>
+      <div id="replies-body" class="replies-body"></div>
+    </aside>
+  </div>
+
+  <script>
+    (function () {
+      function computeCacheKey() {
+        try {
+          if (window.__PGM_CACHE_KEY__) return String(window.__PGM_CACHE_KEY__);
+          const params = new URLSearchParams(window.location.search);
+          const fromUrl = params.get('v') || params.get('ver') || params.get('cache');
+          const key = fromUrl || String(Date.now());
+          window.__PGM_CACHE_KEY__ = key;
+          return key;
+        } catch (_) {
+          return String(Date.now());
+        }
+      }
+
+      function loadScript(src) {
+        return new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = src;
+          s.async = false;
+          s.onload = () => resolve();
+          s.onerror = () => reject(new Error('Failed to load ' + src));
+          document.head.appendChild(s);
+        });
+      }
+
+      const v = computeCacheKey();
+      const suffix = (v ? ('?v=' + encodeURIComponent(v)) : '');
+
+      loadScript('version.js' + suffix)
+        .then(() => loadScript('timeline.js' + suffix))
+        .then(() => loadScript('script.js' + suffix))
+        .catch((err) => {
+          console.error(err);
+        });
+    })();
+  </script>
+</body>
+</html>
