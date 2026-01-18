@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="pgm-base-url" content="" />
+  <title>Pygmalion — Pricing</title>
+  <meta name="description" content="Pricing plans for Pygmalion AI." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="https://via.placeholder.com/40" />
+</head>
+<body>
+  <a class="skip-link" href="#pricing">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#intro" aria-label="Pygmalion AI home">
+        <img src="https://i.postimg.cc/qBmGPXs4/pgm.png" alt="Pygmalion AI Logo" width="20" height="20" />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-list">
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+        </button>
+
+        <ul id="nav-list" class="nav-list">
+          <li><a class="nav-link" href="index.html">Back to Main</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section id="pricing" class="section" aria-labelledby="pricing-title">
+      <div class="container" data-animate>
+        <header class="section-header center">
+          <h1 id="pricing-title">Pricing</h1>
+          <p class="section-subtitle">Choose a plan that fits your workflow. Upgrade anytime.</p>
+        </header>
+
+        <div class="feature-grid" role="list" aria-label="Pricing plans">
+          <article class="feature-card" role="listitem" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3 class="feature-title">Starter</h3>
+            <p class="feature-text">For trying out Pygmalion AI and lightweight research.</p>
+            <div class="prose">
+              <div class="price-display">
+              <span class="price-amount">$0</span>
+              <span class="price-unit">/ month</span>
+            </div>
+              <p>Basic exploration and standard responses.</p>
+            </div>
+            <a class="btn btn-primary" href="index.html#intro">
+              <span>Get Started</span>
+            </a>
+          </article>
+
+          <article class="feature-card" role="listitem" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3 class="feature-title">Pro</h3>
+            <p class="feature-text">For builders who need faster iteration and deeper tooling.</p>
+            <div class="prose">
+              <div class="price-display">
+              <span class="price-amount">$19</span>
+              <span class="price-unit">/ month</span>
+            </div>
+              <p>Higher limits, priority models, and extended history.</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-modal-trigger="contact-modal">
+              <span>Contact Sales</span>
+            </button>
+          </article>
+
+          <article class="feature-card full-width" role="listitem" tabindex="0">
+            <div class="feature-icon" aria-hidden="true">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h3 class="feature-title">Enterprise</h3>
+            <p class="feature-text">For teams who want SSO, governance, and custom deployments.</p>
+            <div class="prose">
+              <div class="price-display">
+              <span class="price-amount">Contact Us</span>
+            </div>
+              <p>Compliance, SLAs, and dedicated support.</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-modal-trigger="contact-modal">
+              <span>Request a Quote</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing-faq" class="section" aria-labelledby="pricing-faq-title">
+      <div class="container" data-animate>
+        <header class="section-header center">
+          <h2 id="pricing-faq-title">FAQ</h2>
+          <p class="section-subtitle">A few common questions about plans and billing.</p>
+        </header>
+
+        <div class="prose text-center">
+          <p><strong>Can I cancel anytime?</strong><br>Yes. Plans can be changed or canceled anytime.</p>
+          <p><strong>Do you offer academic discounts?</strong><br>Yes. Reach out via the Contact section for details.</p>
+          <p><strong>Is on-prem deployment available?</strong><br>Enterprise plans can support custom deployments.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-text">© <span id="year"></span> Pygmalion AI. All rights reserved.</p>
+      <a class="footer-top" href="#pricing" data-scroll-to="pricing" aria-label="Back to top">Back to top</a>
+    </div>
+  </footer>
+
+  <div id="contact-modal" class="modal" role="alertdialog" aria-modal="true" aria-labelledby="contact-modal-title" hidden>
+    <div class="modal-overlay" tabindex="-1"></div>
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="contact-modal-title" class="modal-title">Contact Sales</h2>
+        <button class="btn btn-ghost modal-close" aria-label="Close modal">Close</button>
+      </header>
+      <div class="modal-body">
+        <p class="modal-text">For Pro and Enterprise inquiries, please reach out to our sales team.</p>
+        <div class="contact-info-block">
+          <dl>
+            <dt>Email</dt>
+            <dd><a href="mailto:bestesofficial@gmail.com">bestesofficial@gmail.com</a></dd>
+            <dt>Payment Methods</dt>
+            <dd>Crypto, PayPal, Bank Transfer</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function computeCacheKey() {
+        try {
+          if (window.__PGM_CACHE_KEY__) return String(window.__PGM_CACHE_KEY__);
+          const params = new URLSearchParams(window.location.search);
+          const fromUrl = params.get('v') || params.get('ver') || params.get('cache');
+          const key = fromUrl || String(Date.now());
+          window.__PGM_CACHE_KEY__ = key;
+          return key;
+        } catch (_) {
+          return String(Date.now());
+        }
+      }
+
+      function loadScript(src) {
+        return new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = src;
+          s.async = false;
+          s.onload = () => resolve();
+          s.onerror = () => reject(new Error('Failed to load ' + src));
+          document.head.appendChild(s);
+        });
+      }
+
+      const v = computeCacheKey();
+      const suffix = (v ? ('?v=' + encodeURIComponent(v)) : '');
+
+      loadScript('script.js' + suffix).catch((err) => {
+        console.error(err);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+{
+  "versions": {
+    "V3.5-preview": {
+      "title": "Version 3.5 Preview",
+      "status": "Private Version",
+      "content": "<p>This preview introduces an enhanced guidance system, allowing for more intuitive exploration of complex topics. We have also improved the context retention for longer conversations.</p><p>Feedback on this preview is highly appreciated as we move towards the full V4 release.</p>",
+      "performance": {
+        "pgmBench": 97
+      }
+    },
+    "V3-nothinking": {
+      "title": "Version 3 - No Thinking",
+      "status": "Available Version",
+      "content": "<p>A specialized branch of V3, this version is optimized for rapid, direct answers. It bypasses some of the deeper exploratory functions to provide quicker responses for straightforward queries.</p>",
+      "performance": {
+        "pgmBench": 95
+      }
+    },
+    "V3": {
+      "title": "Version 3",
+      "status": "Available Version",
+      "content": "<p>Version 3 marked a significant step in sharpening the AI's guidance capabilities. The core focus was to make the conversational flow more natural and the insights more relevant to the user's exploration path.</p>",
+      "performance": {
+        "pgmBench": 96
+      }
+    },
+    "V2.8": {
+      "title": "Version 2.8",
+      "status": "Private Version",
+      "content": "<p>This incremental update focused on fine-tuning the search and retrieval algorithms. It resulted in faster and more accurate information fetching during conversations.</p>",
+      "performance": {
+        "pgmBench": 92
+      }
+    },
+    "V2.6": {
+      "title": "Version 2.6",
+      "status": "Private Version",
+      "content": "<p>Addressed community feedback regarding follow-up questions. This version improved the AI's ability to understand and respond to nuanced, multi-turn inquiries.</p>",
+      "performance": {
+        "pgmBench": 90
+      }
+    },
+    "V2.5": {
+      "title": "Version 2.5",
+      "status": "Available Version",
+      "content": "<p>Initial fine-tuning of the V2 model. This update laid the groundwork for the more advanced search features that followed.</p>",
+      "performance": {
+        "pgmBench": 88
+      }
+    },
+    "V2-search": {
+      "title": "Version 2 - Search",
+      "status": "Available Version",
+      "content": "<p>The first major integration of a dedicated search module. V2-search allowed Pygmalion to retrieve and incorporate external information into its conversational responses, significantly expanding its knowledge base.</p>",
+      "performance": {
+        "pgmBench": 85
+      }
+    }
+  },
+  "timeline": [
+    {
+      "type": "version",
+      "icon": "arrow",
+      "iconStyle": "faded",
+      "author": {
+        "name": "lsthc",
+        "url": "https://github.com/lsthc",
+        "avatar": "https://avatars.githubusercontent.com/u/247793294?v=4"
+      },
+      "action": "updated",
+      "versionId": "V3.5-preview",
+      "versionLabel": "V3.5-preview",
+      "extraText": "",
+      "date": {
+        "iso": "2026-01-10",
+        "label": "Jan 10, 2026"
+      }
+    },
+    {
+      "type": "version",
+      "icon": "edit",
+      "iconStyle": "faded",
+      "author": {
+        "name": "lsthc",
+        "url": "https://github.com/lsthc",
+        "avatar": "https://avatars.githubusercontent.com/u/247793294?v=4"
+      },
+      "action": "fine-tuned",
+      "versionId": "V3-nothinking",
+      "versionLabel": "V3-nothinking",
+      "extraText": "for rapid answers",
+      "date": {
+        "iso": "2026-01-01",
+        "label": "Jan 1, 2026"
+      }
+    },
+    {
+      "type": "version",
+      "icon": "arrow",
+      "iconStyle": "faded",
+      "author": {
+        "name": "lsthc",
+        "url": "https://github.com/lsthc",
+        "avatar": "https://avatars.githubusercontent.com/u/247793294?v=4"
+      },
+      "action": "updated",
+      "versionId": "V3",
+      "versionLabel": "V3",
+      "extraText": "to sharpen guidance",
+      "date": {
+        "iso": "2026-01-01",
+        "label": "Jan 1, 2026"
+      }
+    },
+    {
+      "type": "version",
+      "icon": "edit",
+      "iconStyle": "faded",
+      "author": {
+        "name": "lsthc",
+        "url": "https://github.com/lsthc",
+        "avatar": "https://avatars.githubusercontent.com/u/247793294?v=4"
+      },
+      "action": "fine-tuned",
+      "versionId": "V2.8",
+      "versionLabel": "V2.8",
+      "extraText": "",
+      "date": {
+        "iso": "2025-12-28",
+        "label": "Dec 28, 2025"
+      }
+    },
+    {
+      "type": "version",
+      "icon": "edit",
+      "iconStyle": "faded",
+      "author": {
+        "name": "lsthc",
+        "url": "https://github.com/lsthc",
+        "avatar": "https://avatars.githubusercontent.com/u/247793294?v=4"
+      },
+      "action": "fine-tuned",
+      "versionId": "V2.6",
+      "versionLabel": "V2.6",
+      "extraText": "",
+      "date": {
+        "iso": "2025-12-27",
+        "label": "Dec 27, 2025"
+      }
+    },
+    {
+      "type": "version",
+      "icon": "edit",
+      "iconStyle": "faded",
+      "author": {
+        "name": "lsthc",
+        "url": "https://github.com/lsthc",
+        "avatar": "https://avatars.githubusercontent.com/u/247793294?v=4"
+      },
+      "action": "fine-tuned",
+      "versionId": "V2.5",
+      "versionLabel": "V2.5",
+      "extraText": "",
+      "date": {
+        "iso": "2025-12-26",
+        "label": "Dec 26, 2025"
+      }
+    },
+    {
+      "type": "version",
+      "icon": "edit",
+      "iconStyle": "faded",
+      "author": {
+        "name": "lsthc",
+        "url": "https://github.com/lsthc",
+        "avatar": "https://avatars.githubusercontent.com/u/247793294?v=4"
+      },
+      "action": "fine-tuned",
+      "versionId": "V2-search",
+      "versionLabel": "V2-search",
+      "extraText": "for smoother follow-ups",
+      "date": {
+        "iso": "2025-12-25",
+        "label": "Dec 25, 2025"
+      }
+    },
+    {
+      "type": "comment",
+      "icon": "comment",
+      "iconStyle": "faded",
+      "extraClass": "extra-space",
+      "author": {
+        "name": "pygmalionBot",
+        "url": "https://github.com/bestes-lab",
+        "avatar": "https://www.shutterstock.com/image-vector/chat-bot-icon-virtual-smart-600nw-2478937555.jpg"
+      },
+      "action": "commented",
+      "date": {
+        "iso": "2025-11-23",
+        "label": "Nov 23, 2025"
+      },
+      "commentHtml": "<p>pygmalion v0의 개발이 끝났어요.<br>현재 저희는 <b>pygmalion v1</b>의 개발에 착수했어요.</p>",
+      "repliesCount": 143
+    }
+  ]
+}
